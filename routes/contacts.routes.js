@@ -1,15 +1,7 @@
-const router = require('express').Router()
+const router = require('express').Router();
 
+const { saveContacts } = require('../controllers/contacts.controllers');
 
+router.post("/saveContacts", saveContacts);
 
-const {
-
-    saveContact
-
-} = require('../controllers/contacts.controllers')
-
-
-
-router.post("/saveContact", saveContact)
-
-module.exports = router
+module.exports = router;

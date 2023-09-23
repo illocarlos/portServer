@@ -1,6 +1,6 @@
 const Contact = require('../models/Contact.model')
 
-const saveContact = (res, req, next) => {
+const saveContacts = (req, res, next) => {
 
     const { email, info } = req.body
 
@@ -10,6 +10,7 @@ const saveContact = (res, req, next) => {
         .catch(err => next(err))
 
 }
+
 module.exports = {
-    saveContact
+    saveContacts
 }
