@@ -6,19 +6,14 @@ const contactSchema = new Schema(
       type: String,
       required: [true, 'Email is required.'],
       lowercase: true,
-      trim: true
     },
     info: {
       type: String,
       required: [true, 'info is required.'],
       minLength: [20, 'min 20 character'],
       maxLength: [500, 'max 20 character'],
-      unique: true,
 
     },
-  },
-  {
-    timestamps: true
   }
 );
 
