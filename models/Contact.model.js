@@ -2,10 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const contactSchema = new Schema(
   {
-    email: {
+    direcction: {
       type: String,
       required: [true, 'Email is required.'],
       lowercase: true,
+
     },
     info: {
       type: String,

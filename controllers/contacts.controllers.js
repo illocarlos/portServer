@@ -1,12 +1,27 @@
 const Contact = require('../models/Contact.model')
+const transporter = require('../config/transporter.config')
 
 const saveContacts = (req, res, next) => {
 
-    const { email, info } = req.body
+    const { direcction, info } = req.body
 
     Contact
-        .create({ email, info })
-        .then(response => res.json(response))
+
+        .create({ direcction, info })
+    transporter.sendMail({
+
+        from: direcction,
+        to: process.env.EMAIL_ADDRESS,
+        subject: direcction,
+        text: info,
+        html: `<b>${info}</b>`,
+    })
+        .then(response => {
+            console.log(process.env.EMAIL_ADDRESS)
+            console.log(direcction)
+            res.json(response)
+        })
+
         .catch(err => next(err))
 
 }
