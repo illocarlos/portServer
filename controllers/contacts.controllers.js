@@ -3,18 +3,18 @@ const transporter = require('../config/transporter.config')
 
 const saveContacts = (req, res, next) => {
 
-    const { direcction, info } = req.body
+    const { direcction, info, name } = req.body
 
     Contact
 
-        .create({ direcction, info })
+        .create({ direcction, info, name })
     transporter.sendMail({
 
         from: direcction,
         to: process.env.EMAIL_ADDRESS,
         subject: direcction,
         text: info,
-        html: `<b>${info}</b>`,
+        html: `<b>${name}</b>`,
     })
         .then(response => {
             console.log(process.env.EMAIL_ADDRESS)

@@ -8,6 +8,12 @@ const contactSchema = new Schema(
       lowercase: true,
 
     },
+    name: {
+      type: String,
+      required: [true, 'name is required.'],
+      minLength: [4, 'min 4 character'],
+      maxLength: [20, 'max 20 character'],
+    },
     info: {
       type: String,
       required: [true, 'info is required.'],

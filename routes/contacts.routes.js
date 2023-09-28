@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { saveContacts } = require('../controllers/contacts.controllers');
+const saveContacts = require('../controllers/contacts.controllers');
 
 router.post("/saveContacts", saveContacts);
 
