@@ -22,6 +22,15 @@ const workSchema = new Schema(
             maxLength: [500, 'max 20 character'],
 
         },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        },
+
+        attendees: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }],
     }
 );
 
