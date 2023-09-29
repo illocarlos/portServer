@@ -2,13 +2,9 @@ const { Schema, model } = require("mongoose");
 
 const workSchema = new Schema(
     {
-        photo: {
+        image: {
             type: String,
-            required: [true, 'You need a photo'],
-            validate: {
-                validator: value => value.length > 0,
-                message: 'At least one photo is required',
-            },
+            required: [true, 'photo requered'],
         },
         description: {
             type: String,

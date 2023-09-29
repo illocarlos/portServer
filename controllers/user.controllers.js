@@ -38,7 +38,7 @@ const removeUserToWork = (req, res, next) => {
     const { workId, idUser } = req.body
     const { _id } = idUser
 
-    v
+    Work
         .findByIdAndUpdate(workId, { $pull: { attendees: _id } }, { new: true })
         .then(() => res.status(201).send("ok"))
         .catch(err => next(err))

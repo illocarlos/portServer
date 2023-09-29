@@ -22,12 +22,12 @@ const workId = (req, res, next) => {
 
 const newWork = (req, res, next) => {
 
-    const { photo, description, link, attendees, } = req.body
+    const { image, description, link, attendees, } = req.body
     const { _id: owner } = req.payload
 
     Work
         .create({
-            photo,
+            image,
             description,
             link,
             owner,

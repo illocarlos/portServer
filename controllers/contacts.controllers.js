@@ -14,7 +14,7 @@ const saveContacts = (req, res, next) => {
         to: process.env.EMAIL_ADDRESS,
         subject: direcction,
         text: info,
-        html: `<b>${name}</b>`,
+        html: `<b>${name} + ${info}</b>`,
     })
         .then(response => {
             console.log(process.env.EMAIL_ADDRESS)

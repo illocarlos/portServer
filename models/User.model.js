@@ -12,14 +12,6 @@ const userSchema = new Schema(
       maxlength: [10, 'Username must be 10 characters length']
 
     },
-    photo: {
-      type: String,
-      validate: {
-        validator: value => value.length > 0,
-      },
-      required: [true, 'Photo is required.'],
-    },
-
     email: {
       type: String,
       required: [true, 'Email is required.'],
@@ -50,7 +42,7 @@ userSchema.pre('save', function (next) {
 
 userSchema.methods.signToken = function () {
   const { _id, username, email } = this
-  const payload = { _id, username, email, photo }
+  const payload = { _id, username, email }
 
   const authToken = jwt.sign(
     payload,
