@@ -1,6 +1,6 @@
 const Work = require('../models/Work.model')
 
-const listWork = (req, res, next) => {
+const WorkList = (req, res, next) => {
 
     Work
         .find()
@@ -22,11 +22,11 @@ const workId = (req, res, next) => {
 
 const newWork = (req, res, next) => {
 
-    const { workImage, description, link, attendees, } = req.body
+    const { workImage, description, link, attendees, gitHub } = req.body
     const { _id: owner } = req.payload
 
     Work
-        .create({ workImage, description, link, owner, attendees, })
+        .create({ workImage, description, link, owner, attendees, gitHub })
         .then(() => res.sendStatus(201))
         .catch(err => next(err))
 }
@@ -42,7 +42,7 @@ const deleteWork = (req, res, next) => {
 
 
 module.exports = {
-    listWork,
+    WorkList,
     workId,
     newWork,
     deleteWork,

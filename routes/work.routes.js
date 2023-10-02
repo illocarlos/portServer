@@ -2,14 +2,14 @@ const router = require("express").Router()
 const { verifyToken } = require("../middlewares/verifyToken")
 
 const {
-    listWork,
+    WorkList,
     workId,
     newWork,
     deleteWork,
 
 } = require('../controllers/work.controllers')
 
-router.get('/listWork', listWork)
+router.get('/listWork', WorkList)
 
 router.get('/:work_id', workId)
 
