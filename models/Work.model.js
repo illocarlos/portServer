@@ -7,6 +7,11 @@ const workSchema = new Schema(
             required: [true, 'photo requered'],
 
         },
+        title: {
+            type: String,
+            minLength: [4, 'min 4 character'],
+
+        },
         description: {
             type: String,
             required: [true, 'description is required.'],

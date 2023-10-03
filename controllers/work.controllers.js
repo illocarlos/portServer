@@ -22,11 +22,11 @@ const workId = (req, res, next) => {
 
 const newWork = (req, res, next) => {
 
-    const { workImage, description, link, attendees, gitHub } = req.body
+    const { title, workImage, description, link, attendees, gitHub } = req.body
     const { _id: owner } = req.payload
 
     Work
-        .create({ workImage, description, link, owner, attendees, gitHub })
+        .create({ title, workImage, description, link, owner, attendees, gitHub })
         .then(() => res.sendStatus(201))
         .catch(err => next(err))
 }
