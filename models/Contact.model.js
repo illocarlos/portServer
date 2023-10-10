@@ -6,11 +6,12 @@ const contactSchema = new Schema(
       type: String,
       required: [true, 'Email is required.'],
       lowercase: true,
+      unique: true
 
     },
     name: {
       type: String,
-
+      required: [true, 'Username is required.'],
     },
     info: {
       type: String,
