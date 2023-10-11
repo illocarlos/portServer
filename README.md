@@ -1,5 +1,4 @@
- 
-|---|---|---|---|
+ |---|---|---|---|
 |GET|/|index| |
 |GET|/listWork|Create work form render| |
 |POST|/newWork|Create user form handler| |
