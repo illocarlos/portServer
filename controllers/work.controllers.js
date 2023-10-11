@@ -14,7 +14,6 @@ const workId = (req, res, next) => {
 
     Work
         .findById(work_id)
-        .populate("attendees")
         .then(response => res.json(response))
         .catch(err => next(err))
 
