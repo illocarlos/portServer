@@ -20,13 +20,13 @@ const workSchema = new Schema(
         },
         link: {
             type: String,
-            required: [true, 'info is required.'],
-            maxLength: [50, 'max 50 character'],
+
+
         },
         gitHub: {
             type: String,
             required: [true, 'info is required.'],
-            maxLength: [50, 'max 50 character'],
+
         },
         owner: {
             type: Schema.Types.ObjectId,
