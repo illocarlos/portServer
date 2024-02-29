@@ -13,6 +13,6 @@ const uploadRoutes = require('./upload.routes')
 router.use("/upload", uploadRoutes)
 
 const workRoutes = require('./work.routes')
-router.use("/work", workRoutes)
+router.use("/works", workRoutes)
 
 module.exports = router
